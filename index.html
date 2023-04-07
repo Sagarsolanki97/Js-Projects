@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit Converter</title>
+  </head>
+  <style>
+    body{
+        margin: 0 auto;
+        padding: 0;    
+        min-width: 320px;
+    }
+ .input { 
+    display: inline-block;
+}
+h2{
+    text-align: center;
+}
+.container{
+   width: 80%;
+   margin: 10px auto 10px auto;
+   padding: 20px;
+   text-align: center;
+   background: #aaa;
+
+}
+input{
+    padding: 8px;
+    border-radius: 5px;
+    margin: 10px;font-weight: bold;
+    /* font-size: 40; */
+    height: 20px;
+}
+  </style>
+  <body>
+    <h2>Unit Converter</h2>
+    <div class="container">
+     
+      <div class="input">
+        <label>Feet:</label><br>
+        <input type="number" id="Feet" class="inputs" placeholder="1"/>
+      </div>
+      <div class="input">
+        <label>Inches:</label><br>
+        <input type="number" id="Inches" class="inputs" placeholder="12"/>
+      </div>
+    </div>  
+    <!-- HTML ends here  && JS begins-->
+    <script>
+var feet = document.getElementById("Feet")
+var inch = document.getElementById("Inches")
+
+feet.addEventListener('input' , function(){
+  let f = this.value;
+  let i = 12*f; 
+inch.value = i; 
+
+}
+);
+inch.addEventListener('input' , function(){
+  let i = this.value;
+  let f = i/12; 
+  if(!Number.isInteger){
+    f=f.toFixed(3);
+  }
+feet.value = f; 
+
+}
+);
+    </script>
+  </body>
+</html>
